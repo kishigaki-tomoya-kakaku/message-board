@@ -12,34 +12,5 @@
   </div>
 </div>
 
-<%= form_for(@message, :html => {:class => 'form-horizontal'}) do |f| %>
-<% if @message.errors.present? %>
-    <div class="alert alert-danger">
-      <%= alert %>
-      <ul>
-        <% @message.errors.full_messages.each do |full_message| %>
-          <li>
-            <%= full_message %>
-          </li>
-        <% end %> 
-      </ul>
-    </div>
-<% end %>
-<div class="form-group">
-  <label for="inputNamel3" class="col-sm-1 control-label">名前</label>
-  <div class="col-sm-11">
-    <%= f.text_field :name, class: "form-control", placeholder: "煌木　太郎", id: "inputNamel3" %>
-  </div>
-</div>
-<div class="form-group">
-  <label for="inputContsl3" class="col-sm-1 control-label">内容</label>
-  <div class="col-sm-11">
-    <%= f.text_area :body, rows: 3, class: "form-control", id: "inputContsl3" %>
-  </div>
-</div>
-<div class="form-group">
-  <div class="col-sm-offset-1 col-sm-11">
-    <%= f.submit class: "btn btn-sm btn-primary" %>
-  </div>
-</div>
-<% end %>
+<% #部分テンプレートを読み込んでいる %>
+<%= render 'form' %>
